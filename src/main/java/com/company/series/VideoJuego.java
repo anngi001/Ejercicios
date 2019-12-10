@@ -10,18 +10,18 @@ public class VideoJuego implements Entregable_Interface {
     private String compania;
 
 
-    private  static  int HORASDEFAULT = 100;
-    public final  int MAYOR = 1;
-    public final  int MENOR = -1;
-    public final  int IGUAL = 0;
+    private  static  int HORAS_DEFAULT = 100;
+    public static final  int MAYOR = 1;
+    public static final  int MENOR = -1;
+    public static final  int IGUAL = 0;
 
     public VideoJuego() {
-        this("", HORASDEFAULT, "", "");
+        this("", HORAS_DEFAULT, "", "");
     }
 
 
     public VideoJuego(String titulo, int horasEstimadas) {
-        this(titulo, HORASDEFAULT, "J", " ");
+        this(titulo, HORAS_DEFAULT, "J", " ");
     }
 
 
@@ -113,12 +113,6 @@ public class VideoJuego implements Entregable_Interface {
     }
 
 
-    public boolean equals(VideoJuego a) {
-        if (titulo.equalsIgnoreCase(a.getTitulo()) && compania.equalsIgnoreCase(a.getcompania())) {
-            return true;
-        }
-        return false;
-    }
 
 }
 

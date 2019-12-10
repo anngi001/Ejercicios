@@ -2,22 +2,22 @@ package com.company.series;
 
 public class Serie implements Entregable_Interface {
 
-    public String titulo;
-    public int numeroTemporadas;
-    public boolean entregado;
-    public String genero;
-    public String creador;
+    private String titulo;
+    private int numeroTemporadas;
+    private boolean entregado;
+    private String genero;
+    private String creador;
 
-    public final static int numeroTemporadasDefault = 3;
+    public static final int NUMERO_TEMPORADAS_DEFAULT = 3;
 
 
-    public final static int MAYOR = 1;
-    public final static int IGUAL = 0;
-    public final static int MENOR = -1;
+    public static final  int MAYOR = 1;
+    public static final  int IGUAL = 0;
+    public static final  int MENOR = -1;
 
 
     public Serie() {
-        this("", numeroTemporadasDefault, " ", " ");
+        this("", NUMERO_TEMPORADAS_DEFAULT, " ", " ");
     }
 
     public Serie(String titulo, String creador) {
@@ -62,12 +62,6 @@ public class Serie implements Entregable_Interface {
         return false;
     }
 
-    public boolean equals(Serie a) {
-        if (titulo.equalsIgnoreCase(a.getTitulo()) && creador.equalsIgnoreCase(a.getCreador())) {
-            return true;
-        }
-        return false;
-    }
 
 
     public String getTitulo() {
@@ -106,8 +100,6 @@ public class Serie implements Entregable_Interface {
 
     public int compareTo(Object a) {
         int estado = MENOR;
-
-        //Hacemos un casting de objetos para usar el metodo get
         Serie ref = (Serie) a;
         if (numeroTemporadas > ref.getNumeroTemporadas()) {
             estado = MAYOR;

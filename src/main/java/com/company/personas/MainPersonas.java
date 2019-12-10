@@ -42,40 +42,40 @@ public class MainPersonas {
 
         System.out.println("----------------------Primera Persona---------------------- \n ");
         System.out.println(persona1.toString());
-        MayorEdad(persona1);
-        PesoAviso(persona1);
+        mayorEdad(persona1);
+        pesoAviso(persona1);
 
 
         System.out.println("----------------------Segunda Persona---------------------- \n");
 
         System.out.println(persona2.toString());
-        MayorEdad(persona2);
-        PesoAviso(persona2);
+        mayorEdad(persona2);
+        pesoAviso(persona2);
 
 
         System.out.println("----------------------Tercera Persona---------------------- \n");
         System.out.println(persona3.toString());
-        MayorEdad(persona3);
-        PesoAviso(persona3);
+        mayorEdad(persona3);
+        pesoAviso(persona3);
 
 
     }
 
-    public static void PesoAviso(Persona persona) {
-        int IMC = persona.calcularIMC();
+    public static void pesoAviso(Persona persona) {
+        int indiceMCorporal = persona.calcularIMC();
 
-        switch (IMC) {
-            case Persona.DENTROPESO:
+        switch (indiceMCorporal) {
+            case Persona.DENTRO_PESO:
                 System.out.println("\t\t **********************************");
                 System.out.println("\t\t*La persona esta en su peso ideal*");
                 System.out.println("\t\t**********************************");
                 break;
-            case Persona.DEBAJOPESO:
+            case Persona.DEBAJO_PESO:
                 System.out.println("\t\t*********************************************");
                 System.out.println("\t\t*La persona esta por debajo de su peso ideal*");
                 System.out.println("\t\t*********************************************");
                 break;
-            case Persona.SOBREPESO:
+            case Persona.SOBRE_PESO:
                 System.out.println("\t\t*********************************************");
                 System.out.println("\t\t*La persona esta por encima de su peso ideal*");
                 System.out.println("\t\t*********************************************");
@@ -83,7 +83,7 @@ public class MainPersonas {
         }
     }
 
-    public static void MayorEdad(Persona persona) {
+    public static void mayorEdad(Persona persona) {
 
         if (persona.mayorEdad()) {
             System.out.println("\t\t*****************************");

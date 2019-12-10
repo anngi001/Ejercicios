@@ -1,36 +1,37 @@
 package com.company.electrodomesticos;
 
 public class  Electrodomestico{
-  private String color;
-    private char consumoEnergetico;
-    private double precio;
-    private double peso;
 
-    public final static String colorBase = "Blanco";
-    public final static char consumoDefault = 'F';
-    public static double precioBase = 100;
-    public static double pesoBase = 5.0;
+    private char consumoEnergetico;
+    private double peso;
+    private String color;
+
+    public static String COLOR_BASE = "Blanco";
+    public static final char CONSUMO_DEFAULT = 'F';
+    static double preciodefault = 100.0;
+    static double pesobase = 5.0;
 
 
     public Electrodomestico() {
-        this(consumoDefault, precioBase, pesoBase);
+        this(CONSUMO_DEFAULT, preciodefault, pesobase);
 
     }
+
 
     public Electrodomestico(char consumo, double precio, double peso) {
         this.consumoEnergetico = consumo;
-        this.precio = precio;
         this.peso = peso;
+        this.preciodefault= precio;
     }
 
 
-    public Electrodomestico(double precioBase, double pesoBase) {
-        this(precioBase,pesoBase,consumoDefault,colorBase);
+    public Electrodomestico(double precioDefault, double pesoBase) {
+        this(precioDefault, pesoBase, CONSUMO_DEFAULT, COLOR_BASE);
     }
 
-    public Electrodomestico(double precioBase, double pesoBase, char consumoEnergetico, String colorBase) {
-        this.precioBase = precioBase;
-        this.pesoBase= pesoBase;
+    public Electrodomestico(double precioDefault, double pesoBase, char consumoEnergetico, String colorBase) {
+        preciodefault = precioDefault;
+        pesobase = pesoBase;
         comprobarConsumoEnergetico(consumoEnergetico);
         comprobarColor(colorBase);
     }
@@ -39,17 +40,17 @@ public class  Electrodomestico{
 
 
     private void comprobarColor(String color) {
-        String colores[] = {"blanco", "negro", "rojo", "azul", "gris"};
+        String []colores = {"blanco", "negro", "rojo", "azul", "gris"};
         boolean encontrado = false;
+
         for (int i = 0; i < colores.length && !encontrado; i++) {
             if (colores[i].equals(color)) {
                 encontrado = true;
             }
-        }
-        if (encontrado) {
+        }if (encontrado) {
             this.color = color;
         } else {
-            this.color = Electrodomestico.colorBase;
+            this.color = Electrodomestico.COLOR_BASE;
         }
     }
 
@@ -58,7 +59,7 @@ public class  Electrodomestico{
         if(consumoEnergetico>=0 && consumoEnergetico<=80){
             this.consumoEnergetico=consumoEnergetico;
         }else{
-            this.consumoEnergetico=consumoDefault;
+            this.consumoEnergetico= CONSUMO_DEFAULT;
         }
 
     }
@@ -84,6 +85,10 @@ public class  Electrodomestico{
             case 'F':
                 precio+=10;
                 break;
+            default:
+                System.out.println(" Letra no encontrado... Verifiquela");
+                break;
+
         }
 
         if(peso>=0 && peso<19){
@@ -96,26 +101,22 @@ public class  Electrodomestico{
             precio+=100;
         }
 
-        return precioBase+precio;
+        return preciodefault +precio;
     }
 
 
     public double getPrecio() {
-        return precioBase;
+        return preciodefault;
     }
 
     public String getColor() {
-        return colorBase;
+        return COLOR_BASE;
     }
 
 
-    public char getConsumoEnergetico() {
-        return consumoDefault;
-    }
 
-    public double getPeso() {
-        return pesoBase;
+
     }
 
 
-}
+

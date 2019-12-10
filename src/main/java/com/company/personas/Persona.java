@@ -1,6 +1,5 @@
 package com.company.personas;
 
-import java.util.Random;
 
 public class Persona {
 
@@ -11,10 +10,10 @@ public class Persona {
     private double altura;
     private String dni;
 
-    public static int DEBAJOPESO = 0;
-    public static int SOBREPESO = 1;
-    public static int DENTROPESO = -1;
-    public static char SEXODEFAULT = 'H';
+    public static final int DEBAJO_PESO = 0;
+    public static final int SOBRE_PESO = 1;
+    public static final int DENTRO_PESO = -1;
+    public static final char SEXO_DEFAULT = 'H';
 
 
     public Persona() {
@@ -25,7 +24,7 @@ public class Persona {
 
 
     public Persona(String nombre, int edad, char sexo) {
-        this(nombre, edad, SEXODEFAULT, 0, 0);
+        this(nombre, edad, SEXO_DEFAULT, 0, 0);
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -48,11 +47,11 @@ public class Persona {
         double pesoActual = peso / (Math.pow(altura, 2));
 
         if (pesoActual >= 20 && pesoActual <= 25) {
-            return DEBAJOPESO;
+            return DEBAJO_PESO;
         } else if (pesoActual < 20) {
-            return DENTROPESO;
+            return DENTRO_PESO;
         } else {
-            return SOBREPESO;
+            return SOBRE_PESO;
         }
     }
 
@@ -67,7 +66,7 @@ public class Persona {
     }
     private void comprobarSexo() {
         if (sexo != 'H' && sexo != 'M') {
-            this.sexo = SEXODEFAULT;
+            this.sexo = SEXO_DEFAULT;
         }
     }
 
@@ -91,8 +90,7 @@ public class Persona {
 
     public void generarDni() {
         final int divisor = 23;
-        Random r = new Random();
-        int    dniNumero = r.nextInt((int) (Math.floor(Math.random()*100000000 - 10000000) + 10000000));
+        int    dniNumero = (int) (Math.floor(Math.random()*100000000 - 10000000) + 10000000);
         int resta = dniNumero - (dniNumero / divisor * divisor);
         char dniLETRA = generaLetraDNI(resta);
         dni = Integer.toString(dniNumero) + dniLETRA;

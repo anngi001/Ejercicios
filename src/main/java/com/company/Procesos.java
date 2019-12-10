@@ -6,25 +6,12 @@ public class Procesos {
     private static String DIALABORAL = "Es un dia laboral";
     private static String CONFIRMACIONFRASE = "la frase tiene: ";
     Scanner sc = new Scanner(System.in);
-    public void compararNumeros(int x, int y) {
-        if (x == y) {
-            System.out.println("Son iguales");
-        } else if (x > y) {
-            System.out.println(+x + " es mayor que " + y);
-        } else {
-            System.out.println(+y + " es mayor que " + x);
-        }
-    }
-    public void areaCirculo(double radio) {
-        radio = Math.PI * Math.pow(radio, 2);
-        System.out.println("El area del circulo es \t " + radio);
-    }
 
-    public void precioFinal(double precio) {
-        double iva = 0.21;
-        precio = (precio * iva) + precio;
-        System.out.println("El precio final de su producto es \t " + precio);
-    }
+
+
+
+
+
     public void parImparWHILE() {
         int valor = 1;
         while (valor <= 100) {
