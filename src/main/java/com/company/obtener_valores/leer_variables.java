@@ -1,23 +1,22 @@
 package com.company.obtener_valores;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class leer_variables {
+    static final Logger logger = Logger.getLogger(leer_variables.class.getName());
     Scanner sc = new Scanner(System.in);
-
+    String mensajeEntero ="Ingrese el valor";
     public int leerNumero_Entero(){
-        System.out.println("Ingrese el valor");
+        logger.info(mensajeEntero);
         int valor  = sc.nextInt();
         return valor;
     }
 
-    public String leePalabra(){
-        System.out.println("Ingrese lo que se necesita");
+    public String leerPalabra(){
+        String mensajeEntero ="Ingrese la palabra" +
+                "|";
         String letra = sc.nextLine();
         return letra;
     }
-    public double leerNumero_Decimales(){
-        System.out.println("Ingrese el valor");
-        double valor  = sc.nextDouble();
-        return valor;
-    }
+
 }
