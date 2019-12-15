@@ -1,13 +1,17 @@
 package com.company.operacionesConObjetos.actividades.electrodomesticos;
 
 
+import com.company.Main;
 import com.company.obtener_valores.constantes;
+
+import java.util.logging.Logger;
 
 import static com.company.obtener_valores.constantes.*;
 
 
 
 public class  Electrodomestico{
+    final Logger logger = Logger.getLogger(Main.class.getName());
 
     private char consumoEnergetico;
     private double peso;
@@ -90,7 +94,8 @@ public class  Electrodomestico{
                 precio+=10;
                 break;
             default:
-                System.out.println(" Letra no encontrado... Verifiquela");
+                String mensajeVerificacion = "  Letra no encontrado... Verifiquela";
+                logger.info(mensajeVerificacion);
                 break;
 
         }

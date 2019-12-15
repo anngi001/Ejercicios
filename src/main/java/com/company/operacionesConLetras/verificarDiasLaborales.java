@@ -1,7 +1,10 @@
 package com.company.operacionesConLetras;
 
 
+import com.company.Main;
 import com.company.obtener_valores.leer_variables;
+
+import java.util.logging.Logger;
 
 import static  com.company.obtener_valores.constantes.*;
 
@@ -9,6 +12,7 @@ import static  com.company.obtener_valores.constantes.*;
 
 public class verificarDiasLaborales {
     leer_variables leerVariables = new leer_variables();
+    final Logger logger = Logger.getLogger(Main.class.getName());
 
 
 
@@ -23,14 +27,14 @@ public class verificarDiasLaborales {
             case "Miercoles":
             case "Jueves":
             case "Viernes":
-                System.out.println(DIALABORAL);
+                logger.info(DIALABORAL);
                 break;
             case "Sabado":
             case "Domingo":
-                System.out.println("NO " + DIALABORAL);
+                logger.info("NO " + DIALABORAL);
                 break;
             default:
-                System.out.println("NO " + DIALABORAL + "\n ****VERIFIQUE EL DIA**** \t");
+                logger.info("NO " + DIALABORAL + "\n ****VERIFIQUE EL DIA**** \t");
         }
     }
 }

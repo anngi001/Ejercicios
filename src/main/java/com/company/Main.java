@@ -94,9 +94,10 @@ do {
 
 
     }
-    System.out.println("Desea volver a tomar una opcion?\n" +
+    String confirmacion_retorno = "Desea volver a tomar una opcion?\n" +
             "1.SI \n" +
-            "2.NO \n");
+            "2.NO \n";
+    logger.info(confirmacion_retorno);
     int opcionVuelta =llamada.leer_Variables.leerNumero_Entero();
     if (opcionVuelta == 1){
         main(args);

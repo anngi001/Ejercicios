@@ -1,16 +1,25 @@
 package com.company.operacionesConNumeros;
 
+import com.company.Main;
+
+import java.util.logging.Logger;
+
 public class comparar_numeros {
 
-
+    final Logger logger = Logger.getLogger(Main.class.getName());
 
     public void compararNumeros(int x, int y) {
+        String msgIgual = " Son iguales" ;
+        String msgMayor = " es mayor que ";
+        String msgMenor = " es mayor que " ;
         if (x == y) {
-            System.out.println("Son iguales");
+            logger.info(msgIgual);
         } else if (x > y) {
-            System.out.println(+x + " es mayor que " + y);
+            logger.info(+x+ msgMayor +y);
+
         } else {
-            System.out.println(+y + " es mayor que " + x);
+            logger.info(+y+ msgMenor +x);
+
         }
     }
 

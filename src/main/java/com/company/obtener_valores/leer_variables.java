@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 public class leer_variables {
     static final Logger logger = Logger.getLogger(leer_variables.class.getName());
     Scanner sc = new Scanner(System.in);
+
     String mensajeEntero ="Ingrese el valor";
     public int leerNumero_Entero(){
         logger.info(mensajeEntero);
@@ -13,8 +14,8 @@ public class leer_variables {
     }
 
     public String leerPalabra(){
-        String mensajeEntero ="Ingrese la palabra" +
-                "|";
+
+        logger.info("Ingrese la palabra");
         String letra = sc.nextLine();
         return letra;
     }

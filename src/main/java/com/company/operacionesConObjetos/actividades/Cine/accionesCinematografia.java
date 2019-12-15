@@ -1,9 +1,14 @@
 package com.company.operacionesConObjetos.actividades.Cine;
 
+import com.company.Main;
 import com.company.obtener_valores.leer_variables;
+
+import java.util.logging.Logger;
 
 public class accionesCinematografia {
     leer_variables leerVariables = new leer_variables();
+    final Logger logger = Logger.getLogger(Main.class.getName());
+
     public void gestionCine() {
         String menu = (
                 " \"****** GESTION CINEMATOGRÁFICA ******** \\n\" " +
@@ -32,7 +37,9 @@ public class accionesCinematografia {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("OPCION INCORRECATA ... ");
+                    String mensajeIncorrecto = "OPCION INCORRECATA ... ";
+                    logger.info(mensajeIncorrecto);
+
                     gestionCine();
                     break;
             }

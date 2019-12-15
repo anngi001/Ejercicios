@@ -1,23 +1,29 @@
 package com.company.operacionesConNumeros;
 
+import com.company.Main;
+
+import java.util.logging.Logger;
+
 public class calcularPareImpar {
+    final Logger logger = Logger.getLogger(Main.class.getName());
     public void parImparWHILE() {
         int valor = 1;
         while (valor <= 100) {
             valor = valor + 1;
             if (valor % 2 == 0) {
-                System.out.println("Par \t " + valor);
+                logger.info("Par"+valor);
+
             } else
-                System.out.println("Impar \t" + valor);
+               logger.info("Impar \t" + valor);
         }
     }
 
     public void parImparFOR() {
         for (int valor = 1; valor <= 100; valor++) {
             if (valor % 2 == 0) {
-                System.out.println("Par \t " + valor);
+             logger.info("Par \t " + valor);
             } else
-                System.out.println("Impar \t " + valor);
+                logger.info("Impar \t " + valor);
         }
     }
 }

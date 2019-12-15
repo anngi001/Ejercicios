@@ -1,8 +1,12 @@
 package com.company.operacionesConObjetos.actividades.electrodomesticos;
 
+import com.company.Main;
+
+import java.util.logging.Logger;
+
 public class MainElectrodomesticos {
     public static void main(String[] args)  {
-
+        final Logger logger = Logger.getLogger(Main.class.getName());
         Electrodomestico listaElectrodomesticos[]=new Electrodomestico[10];
 
 
@@ -35,11 +39,12 @@ public class MainElectrodomesticos {
                 totalTelevisiones+=listaElectrodomesticos[i].precioFinal();
             }
         }
-
-        System.out.println("Sus electrodomestricos son: "+totalElectrodomesticos);
-        System.out.println("Sus Lavadoras son: "+totalLavadoras);
-        System.out.println("Sus Televisores son: "+totalTelevisiones);
-
+        String mensajeElectodomesticos = "Sus electrodomestricos son:";
+        logger.info(mensajeElectodomesticos.concat(String.valueOf(totalElectrodomesticos)));
+        String mensajesLavadoras = "Sus Lavadoras son: " ;
+        logger.info(mensajesLavadoras.concat(String.valueOf(totalLavadoras)));
+        String mensajesTelevisores = "Sus Televisores son: ";
+        logger.info(mensajesTelevisores.concat(String.valueOf(totalTelevisiones)));
 
     }
 }
